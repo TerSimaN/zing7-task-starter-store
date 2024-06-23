@@ -6,6 +6,13 @@ import FeaturedProducts from "@modules/home/components/featured-products"
 import Hero from "@modules/home/components/hero"
 import { ProductCollectionWithPreviews } from "types/global"
 import { cache } from "react"
+import Benefits from "@modules/home/components/benefits"
+import BestSellerProducts from "@modules/home/components/best-seller-products"
+import PromoBanner from "@modules/home/components/promo-banner"
+import Category from "@modules/home/components/category"
+import ProductList from "@modules/home/components/product-list"
+import Blog from "@modules/home/components/blog"
+import Brands from "@modules/home/components/brands"
 
 export const metadata: Metadata = {
   title: "Medusa Next.js Starter Template",
@@ -74,6 +81,14 @@ export default async function Home({
           <FeaturedProducts collections={collections} region={region} />
         </ul>
       </div>
+      <Benefits />
+      <BestSellerProducts />
+      <PromoBanner />
+      <Category />
+      <ProductList />
+      <div className="container border border-gray-100 mt-5"></div>
+      <Blog />
+      <Brands />
     </>
   )
 }
