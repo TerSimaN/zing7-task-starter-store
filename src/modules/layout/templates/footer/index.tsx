@@ -4,13 +4,16 @@ import { getCategoriesList, getCollectionsList } from "@lib/data"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
+import Image from "next/image"
+import Link from "next/link"
+import { facebook_icon, github_icon, instagram_icon, linkedin_icon, twitter_icon } from "../../../../../public/assets/icons"
 
 export default async function Footer() {
   const { collections } = await getCollectionsList(0, 6)
   const { product_categories } = await getCategoriesList(0, 6)
 
   return (
-    <footer className="border-t border-ui-border-base w-full">
+    <footer className="border-t border-ui-border-base bg-grey-100 w-full">
       <div className="content-container flex flex-col w-full">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
           <div>
@@ -112,11 +115,49 @@ export default async function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
+        {/* <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
           <Text className="txt-compact-small">
             © {new Date().getFullYear()} Store. All rights reserved.
           </Text>
           <MedusaCTA />
+        </div> */}
+        <div className="flex max-sm:flex-col gap-y-4 items-center justify-between md:px-0 px-4 py-5 w-full">
+          <span className="font-roboto font-normal text-sm leading-5 text-grey-600">
+            Store © Copyright {new Date().getFullYear()}, Inc. All rights reserved
+          </span>
+          <div className="flex sm:gap-x-3 gap-x-10 items-center">
+            <MedusaCTA />
+            <Link href="#">
+              <Image
+                src={facebook_icon}
+                alt="facebook_icon"
+              />
+            </Link>
+            <Link href="#">
+              <Image
+                src={twitter_icon}
+                alt="twitter_icon"
+              />
+            </Link>
+            <Link href="#">
+              <Image
+                src={linkedin_icon}
+                alt="linkedin_icon"
+              />
+            </Link>
+            <Link href="#">
+              <Image
+                src={instagram_icon}
+                alt="instagram_icon"
+              />
+            </Link>
+            <Link href="#">
+              <Image
+                src={github_icon}
+                alt="github_icon"
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
