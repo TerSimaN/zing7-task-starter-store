@@ -33,6 +33,27 @@ module.exports = {
           70: "#374151",
           80: "#1F2937",
           90: "#111827",
+          100: '#F4F6F8',
+          300: '#C4CDD5',
+          400: '#919EAB',
+          450: '#959EAD',
+          500: '#637381',
+          600: '#5A7184',
+          650: '#454F5B',
+          800: '#212B36',
+          900: '#161D25',
+        },
+        blue: {
+          600: '#5C6AC4',
+          700: '#47C1BF',
+          750: '#43467F',
+          900: '#006FBB',
+        },
+        red: {
+          600: '#DE3618',
+        },
+        orange: {
+          500: '#EEC200',
         },
       },
       borderRadius: {
@@ -69,6 +90,8 @@ module.exports = {
           "Ubuntu",
           "sans-serif",
         ],
+        rubik: ['var(--font-rubik)'],
+        roboto: ['var(--font-roboto)']
       },
       keyframes: {
         ring: {
@@ -157,6 +180,15 @@ module.exports = {
         leave: "leave 150ms ease-in forwards",
       },
     },
+    container: {
+      padding: {
+        xl: '0rem'
+      },
+      center: true,
+      screens: {
+        sm: '1110px'
+      }
+    }
   },
   plugins: [require("tailwindcss-radix")()],
 }
