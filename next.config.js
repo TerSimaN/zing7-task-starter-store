@@ -1,3 +1,4 @@
+const { hostname } = require("os")
 const { withStoreConfig } = require("./store-config")
 const store = require("./store.config.json")
 
@@ -16,6 +17,14 @@ const nextConfig = withStoreConfig({
       {
         protocol: "https",
         hostname: "medusa-public-images.s3.eu-west-1.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "goddess-store.s3.eu-central-1.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "store.24s.us"
       },
       {
         protocol: "https",
