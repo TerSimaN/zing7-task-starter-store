@@ -1,38 +1,50 @@
+"use client"
+
 import { Image as MedusaImage } from "@medusajs/medusa"
-import { Container } from "@medusajs/ui"
 import Image from "next/image"
+import { useState } from "react"
 
 type ImageGalleryProps = {
   images: MedusaImage[]
 }
 
 const ImageGallery = ({ images }: ImageGalleryProps) => {
+  const [current, setCurrent] = useState(images[0].id);
+
   return (
-    <div className="flex items-start relative">
-      <div className="flex flex-col flex-1 small:mx-16 gap-y-4">
-        {images.map((image, index) => {
-          return (
-            <Container
-              key={image.id}
-              className="relative aspect-[29/34] w-full overflow-hidden bg-ui-bg-subtle"
-              id={image.id}
+    <>
+      <div id="product-tab-content">
+        {images.map((image, index) => (
+          <div key={image.id} className={`${current === image.id ? `` : `hidden`} rounded-lg bg-white p-4`}>
+            <Image
+              src={image.url}
+              alt={`Product image ${index + 1}`}
+              width={445}
+              height={345}
+              className="w-full mx-auto"
+            />
+          </div>
+        ))}
+      </div>
+      <ul id="product-tab" className="grid grid-cols-4 gap-4 mt-8">
+        {images.map((image, index) => (
+          <li key={image.id} className="me-2">
+            <button
+              onClick={() => setCurrent(image.id)}
+              className="p-2 mx-auto sm:w-20 md:w-24 sm:h-20 md:h-24 w-20 h-20 overflow-hidden cursor-pointer"
             >
               <Image
                 src={image.url}
-                priority={index <= 2 ? true : false}
-                className="absolute inset-0 rounded-rounded"
                 alt={`Product image ${index + 1}`}
-                fill
-                sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
-                style={{
-                  objectFit: "cover",
-                }}
+                width={130}
+                height={110}
+                className="object-contain w-full h-full"
               />
-            </Container>
-          )
-        })}
-      </div>
-    </div>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </>
   )
 }
 
