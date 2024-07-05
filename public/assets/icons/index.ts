@@ -21,6 +21,8 @@ import camera_icon from './camera_icon.svg';
 import controller_icon from './controller_icon.svg';
 import monitor_icon from './monitor_icon.svg';
 import undershirt_icon from './undershirt_icon.svg';
+import fruit_icon from './fruit_icon.svg';
+import headset_icon from './headset_icon.svg';
 
 import asus_icon from './asus_icon.svg';
 import xiaomi_icon from './xiaomi_icon.svg';
@@ -51,6 +53,8 @@ export {
     controller_icon,
     monitor_icon,
     undershirt_icon,
+    fruit_icon,
+    headset_icon,
     asus_icon,
     xiaomi_icon,
     samsung_icon,
