@@ -5,7 +5,7 @@ import Ideal from "@modules/common/icons/ideal"
 import Bancontact from "@modules/common/icons/bancontact"
 import PayPal from "@modules/common/icons/paypal"
 import { airpods_2nd_gen, apple_watch_4_2020, beats_by_dre_c_3450, blog_image_1, blog_image_2, blog_image_3, garmin_watch_fit_x, harman_kardon_speaker, iphone_xs_max_pro, product_list_1_item, product_list_2_item, product_list_3_item, samsung_galaxy_watch_3, women_yellow_turtleneck } from "../../public/assets/images"
-import { android_phone_icon, apple_icon, asus_icon, basket_ball_icon, ca_flag_icon, camera_icon, cn_flag_icon, controller_icon, de_flag_icon, es_flag_icon, fr_flag_icon, gb_flag_icon, it_flag_icon, jp_flag_icon, monitor_icon, samsung_icon, sony_icon, undershirt_icon, us_flag_icon, wacom_icon, xiaomi_icon } from "../../public/assets/icons"
+import { android_phone_icon, apple_icon, asus_icon, basket_ball_icon, ca_flag_icon, camera_icon, cn_flag_icon, controller_icon, de_flag_icon, es_flag_icon, fr_flag_icon, fruit_icon, gb_flag_icon, headset_icon, it_flag_icon, jp_flag_icon, monitor_icon, samsung_icon, sony_icon, undershirt_icon, us_flag_icon, wacom_icon, xiaomi_icon } from "../../public/assets/icons"
 
 /* Map of payment provider_id to their title and icon. Add in any payment providers you want to use. */
 export const paymentInfoMap: Record<
@@ -180,6 +180,33 @@ export const categoryFilters = [
   {
       name: "Category Name"
   },
+];
+
+export const categoryListFilters = [
+    {
+        imgSrc: headset_icon,
+        name: "Category 01"
+    },
+    {
+        imgSrc: monitor_icon,
+        name: "Item Category 02"
+    },
+    {
+        imgSrc: android_phone_icon,
+        name: "Category List 03"
+    },
+    {
+        imgSrc: fruit_icon,
+        name: "Category 04"
+    },
+    {
+        imgSrc: camera_icon,
+        name: "Item Category 05"
+    },
+    {
+        imgSrc: undershirt_icon,
+        name: "Category List 06"
+    },
 ];
 
 export const productLists = [
