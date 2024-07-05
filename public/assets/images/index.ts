@@ -10,6 +10,11 @@ import iphone_xs_max_pro from './iphone_xs_max_pro.png';
 import samsung_galaxy_watch_3 from './samsung_galaxy_watch_3.png';
 import women_yellow_turtleneck from './women_yellow_turtleneck.png';
 
+import macbook_pro_2018 from './macbook_pro_2018.png';
+import macbook_pro_16_inch from './macbook_pro_16_inch.png';
+import macbook_pro_mf840 from './macbook_pro_mf840.png';
+import macbook_pro_touchbar from './macbook_pro_touchbar.png';
+
 import product_list_1_item from './product_list_1_item.png';
 import product_list_2_item from './product_list_2_item.png';
 import product_list_3_item from './product_list_3_item.png';
@@ -29,6 +34,10 @@ export {
     iphone_xs_max_pro,
     samsung_galaxy_watch_3,
     women_yellow_turtleneck,
+    macbook_pro_16_inch,
+    macbook_pro_2018,
+    macbook_pro_mf840,
+    macbook_pro_touchbar,
     product_list_1_item,
     product_list_2_item,
     product_list_3_item,
