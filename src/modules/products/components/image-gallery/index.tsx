@@ -15,29 +15,27 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
     <>
       <div id="product-tab-content">
         {images.map((image, index) => (
-          <div key={image.id} className={`${current === image.id ? `` : `hidden`} rounded-lg bg-white p-4`}>
+          <div key={image.id} className={`${current === image.id ? `` : `hidden`} relative rounded-lg bg-white w-[27.875rem] h-[21.5rem]`}>
             <Image
               src={image.url}
               alt={`Product image ${index + 1}`}
-              width={445}
-              height={345}
-              className="w-full mx-auto"
+              fill
+              className="object-contain w-full h-full"
             />
           </div>
         ))}
       </div>
-      <ul id="product-tab" className="grid grid-cols-4 gap-4 mt-8">
+      <ul id="product-tab" className="grid grid-cols-3 gap-4 mt-5">
         {images.map((image, index) => (
-          <li key={image.id} className="me-2">
+          <li key={image.id}>
             <button
               onClick={() => setCurrent(image.id)}
-              className="p-2 mx-auto sm:w-20 md:w-24 sm:h-20 md:h-24 w-20 h-20 overflow-hidden cursor-pointer"
+              className="relative md:w-32 md:h-28 w-20 h-20 overflow-hidden cursor-pointer"
             >
               <Image
                 src={image.url}
                 alt={`Product image ${index + 1}`}
-                width={130}
-                height={110}
+                fill
                 className="object-contain w-full h-full"
               />
             </button>

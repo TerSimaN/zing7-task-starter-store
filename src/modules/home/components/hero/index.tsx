@@ -1,5 +1,3 @@
-import { Github } from "@medusajs/icons"
-import { Button, Heading } from "@medusajs/ui"
 import Image from "next/image"
 import Link from "next/link"
 import { hero_image_1 } from "../../../../../public/assets/images"
@@ -7,11 +5,6 @@ import { hero_image_1 } from "../../../../../public/assets/images"
 const Hero = () => {
   return (
     <>
-      {/* <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
-        <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
-          HERO
-        </div>
-      </div> */}
       <div className="flex items-center bg-grey-5 w-full">
         <div className="relative container flex max-sm:flex-col-reverse lg:gap-8 xl:gap-0 md:px-0 px-4 lg:py-16 py-8">
           <div className="mr-auto sm:mt-0 mt-6 max-w-[31.25rem]">
