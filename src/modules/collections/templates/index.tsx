@@ -391,7 +391,7 @@ export default function CollectionTemplate({
                   </span>
                 </div>
                 <h1 className="font-roboto font-medium text-lg leading-6 text-grey-900 mt-2">
-                  Macbook Pro 16"
+                  Macbook Pro 16&quot;
                 </h1>
                 <div className="flex justify-between items-center mt-2.5">
                   <span className="flex font-roboto font-normal text-xs leading-[1.125rem] text-grey-600">
