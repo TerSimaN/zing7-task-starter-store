@@ -5,10 +5,11 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
 import Link from "next/link"
-import { categoryFilters, languageMenuItems, profileMenuItems } from "@lib/constants"
+import { categoryFilters, profileMenuItems } from "@lib/constants"
 import Image from "next/image"
-import { facebook_icon, instagram_icon, twitter_icon, us_flag_icon, youtube_icon } from "../../../../../public/assets/icons"
+import { facebook_icon, instagram_icon, twitter_icon, youtube_icon } from "../../../../../public/assets/icons"
 import MenuDropdown from "@modules/layout/components/menu-dropdown"
+import LanguageSelect from "@modules/layout/components/language-select"
 
 export default async function Nav() {
   const regions = await listRegions().then((regions) => regions)
@@ -62,12 +63,6 @@ export default async function Nav() {
               >
                 Help
               </LocalizedClientLink>
-              <MenuDropdown
-                menuText="English (US)"
-                menuIcon={us_flag_icon}
-                menuItems={languageMenuItems}
-                className="font-rubik font-normal text-base leading-5 tracking-[0.18px] text-store-gray-900"
-              />
               <div className="hidden small:flex items-center gap-x-6 h-full">
                 {process.env.FEATURE_SEARCH_ENABLED && (
                   <LocalizedClientLink
@@ -87,6 +82,7 @@ export default async function Nav() {
                   Account
                 </LocalizedClientLink>
               </div>
+              {regions && <LanguageSelect regions={regions} />}
             </div>
           </div>
           <div className="border border-grey-100 mt-4"></div>
