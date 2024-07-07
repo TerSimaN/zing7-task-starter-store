@@ -232,22 +232,9 @@ export default function CollectionTemplate({
           </div>
         </div>
         <div className="flex flex-col">
-          <div className="ml-7 w-full">
-            <div className="mb-8 text-2xl-semi">
-              <h1>{collection.title}</h1>
-            </div>
-            <Suspense fallback={<SkeletonProductGrid />}>
-              <PaginatedProducts
-                sortBy={sortBy || "created_at"}
-                page={pageNumber}
-                collectionId={collection.id}
-                countryCode={countryCode}
-              />
-            </Suspense>
-          </div>
           <div className="flex items-center gap-x-3.5 place-self-end">
             <span className="font-roboto font-normal text-base leading-[22px] text-grey-450">Sort by:</span>
-            <button className="flex items-center justify-between bg-grey-5 rounded-lg font-roboto font-medium text-base leading-[22px] text-grey-900 px-5 py-3.5">
+            <button className="flex items-center gap-x-10 bg-grey-5 rounded-lg font-roboto font-medium text-base leading-[22px] text-grey-900 px-5 py-3.5">
               Highest rating
               <svg className="w-6 h-6 text-grey-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m8 10 4 4 4-4" />
@@ -423,6 +410,14 @@ export default function CollectionTemplate({
               </div>
             </div>
           </div>
+          <Suspense fallback={<SkeletonProductGrid />}>
+            <PaginatedProducts
+              sortBy={sortBy || "created_at"}
+              page={pageNumber}
+              collectionId={collection.id}
+              countryCode={countryCode}
+            />
+          </Suspense>
           <div className="mx-auto mt-14">
             <ul className="flex items-center gap-x-5 font-roboto font-medium text-base leading-[22px] text-grey-450">
               <li>

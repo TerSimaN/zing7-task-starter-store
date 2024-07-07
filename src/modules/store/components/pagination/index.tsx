@@ -35,8 +35,8 @@ export function Pagination({
   ) => (
     <button
       key={p}
-      className={clx("txt-xlarge-plus text-ui-fg-muted", {
-        "text-ui-fg-base hover:text-ui-fg-subtle": isCurrent,
+      className={clx("font-roboto font-medium text-base leading-[22px] text-grey-450 w-9 h-9", {
+        "border border-blue-900 rounded-lg font-roboto font-medium text-base leading-[22px] text-blue-600 w-9 h-9": isCurrent,
       })}
       disabled={isCurrent}
       onClick={() => handlePageChange(p)}
@@ -49,7 +49,7 @@ export function Pagination({
   const renderEllipsis = (key: string) => (
     <span
       key={key}
-      className="txt-xlarge-plus text-ui-fg-muted items-center cursor-default"
+      className="font-roboto font-medium text-base leading-[22px] text-grey-450 items-center cursor-default"
     >
       ...
     </span>
@@ -108,7 +108,17 @@ export function Pagination({
   // Render the component
   return (
     <div className="flex justify-center w-full mt-12">
-      <div className="flex gap-3 items-end" data-testid={dataTestid}>{renderPageButtons()}</div>
+      <div className="flex gap-5 items-center" data-testid={dataTestid}>
+        {renderPageButtons()}
+        <button
+          className="font-roboto font-medium text-base leading-[22px] text-grey-450"
+          onClick={() => handlePageChange(page + 1)}
+        >
+          <svg className="w-5 h-5 text-grey-650" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m10 16 4-4-4-4" />
+          </svg>
+        </button>
+      </div>
     </div>
   )
 }
